@@ -2,7 +2,7 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Vikram Hari.
 """
 ########################################################################
 # TODO: 1.
@@ -28,3 +28,27 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #  Don't forget to COMMIT your work by using  VCS ~ Commit and Push.
 ########################################################################
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+bigTurtle = rg.SimpleTurtle('turtle')
+bigTurtle.Pen = rg.Pen('midnight blue', 3)
+bigTurtle.speed = 10
+
+smallTurtle = rg.SimpleTurtle()
+smallTurtle.Pen = rg.Pen('midnight blue', 7)
+smallTurtle.speed = 20
+
+size = 200
+
+for k in range(18):
+    bigTurtle.draw_square(size)
+
+    bigTurtle.pen_up()
+    bigTurtle.forward(20)
+
+    bigTurtle.pen_down()
+    size = size - 12
+
+window.close_on_mouse_click()
