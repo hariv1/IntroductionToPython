@@ -5,12 +5,12 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and Vikram Hari.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 # On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #  You should have RUN the PREVIOUS module and READ its code.
 #  (Do so now if you have not already done so.)
@@ -33,22 +33,32 @@ import rosegraphics as rg
 window = rg.TurtleWindow()
 
 bigTurtle = rg.SimpleTurtle('turtle')
-bigTurtle.Pen = rg.Pen('midnight blue', 3)
+bigTurtle.Pen = rg.Pen('black', 3)
 bigTurtle.speed = 10
 
-smallTurtle = rg.SimpleTurtle()
+smallTurtle = rg.SimpleTurtle('turtle')
 smallTurtle.Pen = rg.Pen('midnight blue', 7)
 smallTurtle.speed = 20
 
-size = 200
+size = 30
 
 for k in range(18):
-    bigTurtle.draw_square(size)
+    bigTurtle.draw_circle(size)
+    smallTurtle.draw_square(size)
 
     bigTurtle.pen_up()
-    bigTurtle.forward(20)
+    bigTurtle.forward(10)
+    bigTurtle.right(20)
+    bigTurtle.forward(50)
+
+    smallTurtle.pen_up()
+    smallTurtle.forward(10)
+    smallTurtle.left(20)
+    smallTurtle.forward(50)
 
     bigTurtle.pen_down()
-    size = size - 12
+    smallTurtle.pen_down()
+
+    size = size - 1
 
 window.close_on_mouse_click()
